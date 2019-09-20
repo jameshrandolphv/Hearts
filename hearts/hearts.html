@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	
+		<!---------------->
+		<!-- Meta Stuff -->
+		<meta charset="UTF-8">
+		<title>Hearts!</title>
+		<!--<link rel="icon" href="./images/favicon.png">-->
+		<!---------------->
+		
+		<!---------------->
+		<!-- Stylesheet -->
+		<link href="hearts.css" rel="stylesheet" type="text/css">
+		<!---------------->
+		
+		<!---------------->
+		<!-- JS Sources -->
+		<script src="jquery-3.2.1.js"></script>
+		<script src="Card.js"></script>
+		<script src="Hearts.js"></script>
+		<script src="HeartsMatch.js"></script>
+		<script src="DumbAI.js"></script>
+		<script src="GUIPlayer.js"></script>
+		<script src="GUIPlayerVsThreeDumbAI.js"></script>
+		<!---------------->
+		
+	</head>
+
+	<body>
+		
+		<!--------------------------------------------------->
+		<!-- Informational messages will be displayed here -->
+		<div class="messageBox">
+			<p class="messageBox__text"></p>
+			<!----------------------------------------------------->
+			<!-- This div will disappear once a name is selected -->
+			<div class="nameInput">
+				<form class="nameInput__form">
+					<input class="nameInput__input" type="text" placeholder="Your Name">
+					<button class="nameInput__button" type="button">Let's Play!</button>
+				</form>
+			</div>
+			<!----------------------------------------------------->
+			
+			<!----------------------------------------------------->
+			<!--------------------- Scoring ----------------------->
+			<div class="scoreTable">
+				<div class="scoreTable__position scoreTable__west">
+					<div class="scoreTable__west__header scoreTable__position__header">
+						<h1 class="scoreTable__west__header__text scoreTable__position__header__text">West</h1>
+					</div>
+					<div class="scoreTable__west__score scoreTable__position__score">
+						<h1 class="scoreTable__west__score__text scoreTable__position__score__text">0</h1>
+					</div>
+				</div>
+				<div class="scoreTable__position scoreTable__north">
+					<div class="scoreTable__north__header scoreTable__position__header">
+						<h1 class="scoreTable__north__header__text scoreTable__position__header__text">North</h1>
+					</div>
+					<div class="scoreTable__north__score scoreTable__position__score">
+						<h1 class="scoreTable__north__score__text scoreTable__position__score__text">0</h1>
+					</div>
+				</div>
+				<div class="scoreTable__position scoreTable__east">
+					<div class="scoreTable__east__header scoreTable__position__header">
+						<h1 class="scoreTable__east__header__text scoreTable__position__header__text">East</h1>
+					</div>
+					<div class="scoreTable__east__score scoreTable__position__score">
+						<h1 class="scoreTable__east__score__text scoreTable__position__score__text">0</h1>
+					</div>
+				</div>
+				<div class="scoreTable__position scoreTable__south">
+					<div class="scoreTable__south__header scoreTable__position__header">
+						<h1 class="scoreTable__south__header__text scoreTable__position__header__text">South</h1>
+					</div>
+					<div class="scoreTable__south__score scoreTable__position__score">
+						<h1 class="scoreTable__south__score__text scoreTable__position__score__text">0</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!----------------------------------------------------->
+		
+		<!--------------------------------------------------->
+		
+		
+		
+	<div class="body__gameContent">
+		<!----------------------------------------->
+		<!-- The field where the playing happens -->
+		<div class="playingMat">
+			<!---------------->
+			<!-- Card Slots -->
+			<img alt="" class="playingMat__cardSlot playingMat__cardSlot__west" src="./images/cardSlot.png">
+			<img alt="" class="playingMat__cardSlot playingMat__cardSlot__north" src="./images/cardSlot.png">
+			<img alt="" class="playingMat__cardSlot playingMat__cardSlot__east" src="./images/cardSlot.png">
+			<img alt="" class="playingMat__cardSlot playingMat__cardSlot__south" src="./images/cardSlot.png">
+			<!---------------->
+			
+			<!----------->
+			<!-- Cards -->
+				<!-- Hearts -->
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__0-2">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">2</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit0-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__0-3">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">3</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit0-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__0-4">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">4</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit0-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__0-5">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">5</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit0-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__0-6">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">6</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit0-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__0-7">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">7</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit0-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__0-8">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">8</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit0-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__0-9">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">9</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit0-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__0-10">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">10</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit0-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__0-11">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">J</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit0-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__0-12">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">Q</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit0-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__0-13">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">K</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit0-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__0-14">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">A</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit0-inactive.png">
+				</div>
+				
+				<!-- Spades -->
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__1-2">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">2</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit1-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__1-3">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">3</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit1-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__1-4">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">4</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit1-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__1-5">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">5</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit1-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__1-6">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">6</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit1-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__1-7">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">7</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit1-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__1-8">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">8</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit1-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__1-9">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">9</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit1-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__1-10">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">10</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit1-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__1-11">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">J</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit1-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__1-12">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">Q</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit1-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__1-13">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">K</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit1-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__1-14">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">A</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit1-inactive.png">
+				</div>
+				
+				<!-- Diamonds -->
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__2-2">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">2</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit2-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__2-3">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">3</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit2-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__2-4">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">4</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit2-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__2-5">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">5</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit2-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__2-6">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">6</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit2-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__2-7">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">7</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit2-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__2-8">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">8</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit2-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__2-9">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">9</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit2-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__2-10">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">10</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit2-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__2-11">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">J</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit2-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__2-12">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">Q</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit2-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__2-13">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">K</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit2-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__2-14">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">A</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit2-inactive.png">
+				</div>
+				
+				<!-- Clubs -->
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__3-2">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">2</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit3-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__3-3">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">3</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit3-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__3-4">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">4</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit3-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__3-5">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">5</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit3-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__3-6">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">6</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit3-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__3-7">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">7</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit3-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__3-8">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">8</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit3-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__3-9">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">9</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit3-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__3-10">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">10</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit3-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__3-11">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">J</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit3-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__3-12">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">Q</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit3-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__3-13">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">K</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit3-inactive.png">
+				</div>
+				<div class="playingMat__card playingMat__card__inactive playingMat__card__3-14">
+					<h1 class="playingMat__card__rank playingMat__card__rank__inactive">A</h1>
+					<img alt="" class="playingMat__card__suit" src="./images/suit3-inactive.png">
+				</div>
+			<!----------->
+		</div>
+		<!----------------------------------------->
+	</div>
+	</body>
+
+</html>

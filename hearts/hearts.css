@@ -1,0 +1,273 @@
+@charset "UTF-8";
+
+body {
+	/* Size */
+	width: 100%;
+	height: 100%;
+	
+	/* Position and Display */
+	text-align: center;
+	
+	/* Color */
+	background-color: #403360;
+	background-image: url(images/background.png);
+	background-origin: content-box;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+	.body__gameContent {
+		/* Position and Display */
+		text-align: center;
+		display: table;
+		margin: auto;
+		top: 20px;
+	}
+/**************************/
+
+.messageBox {
+	/* Size */
+	width: 600px;
+	height: 50px;
+	
+	/* Position and Display */
+	margin: auto;
+	right: 0;
+	left: 0;
+	top: 20px;
+	margin-bottom: 10px;
+	padding: 10px;
+	position: fixed;
+	z-index: 1000;
+	
+	/* Color */
+	background-color: rgba(0,0,0,0.73);
+	
+	/* Text */
+	text-align: left;
+}
+	.messageBox__text {
+		margin-left: 20px;
+		font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+		color: #B5ACCD;
+		font-size: 14px;
+	}
+	.messageBox__passButton {
+	    background: #c19fe0;
+	    background-image: -webkit-linear-gradient(top, #c19fe0, #9074b5);
+	    background-image: -moz-linear-gradient(top, #c19fe0, #9074b5);
+	    background-image: -ms-linear-gradient(top, #c19fe0, #9074b5);
+	    background-image: -o-linear-gradient(top, #c19fe0, #9074b5);
+	    background-image: linear-gradient(to bottom, #c19fe0, #9074b5);
+	  -webkit-border-radius: 5;
+	  -moz-border-radius: 5;
+	  	border-radius: 5px;
+	  	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	  	color: #35223D;
+	  	font-size: 14px;
+	    padding: 5px 10px 5px 10px;
+	    text-decoration: none;
+		border: hidden;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+	.messageBox__passButton:hover {
+	    background: #bca7d9;
+	    background-image: -webkit-linear-gradient(top, #bca7d9, #ab97bf);
+	    background-image: -moz-linear-gradient(top, #bca7d9, #ab97bf);
+	    background-image: -ms-linear-gradient(top, #bca7d9, #ab97bf);
+	    background-image: -o-linear-gradient(top, #bca7d9, #ab97bf);
+	    background-image: linear-gradient(to bottom, #bca7d9, #ab97bf);
+	  	text-decoration: none;
+		cursor: pointer;
+	}
+
+.nameInput {
+	/* Position and Display */
+	margin: auto;
+	top: 20px;
+	
+}
+	.nameInput__input {
+		padding:3px;
+		font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+		color: #B5ACCD;
+		font-size: 14px;
+		background-color: rgba(0,0,0,0.00); 
+		border: thin #B5ACCD dashed;
+	}
+	.nameInput__input:focus { outline:none; } 
+	.nameInput__button {
+	    background: #c19fe0;
+	    background-image: -webkit-linear-gradient(top, #c19fe0, #9074b5);
+	    background-image: -moz-linear-gradient(top, #c19fe0, #9074b5);
+	    background-image: -ms-linear-gradient(top, #c19fe0, #9074b5);
+	    background-image: -o-linear-gradient(top, #c19fe0, #9074b5);
+	    background-image: linear-gradient(to bottom, #c19fe0, #9074b5);
+	  -webkit-border-radius: 5;
+	  -moz-border-radius: 5;
+	  	border-radius: 5px;
+	  	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	  	color: #35223D;
+	  	font-size: 14px;
+	    padding: 5px 10px 5px 10px;
+	    text-decoration: none;
+		border: hidden;
+	}
+	.nameInput__button:hover {
+	    background: #bca7d9;
+	    background-image: -webkit-linear-gradient(top, #bca7d9, #ab97bf);
+	    background-image: -moz-linear-gradient(top, #bca7d9, #ab97bf);
+	    background-image: -ms-linear-gradient(top, #bca7d9, #ab97bf);
+	    background-image: -o-linear-gradient(top, #bca7d9, #ab97bf);
+	    background-image: linear-gradient(to bottom, #bca7d9, #ab97bf);
+	  	text-decoration: none;
+		cursor: pointer;
+	}
+
+/**************************/
+
+.scoreTable {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 250px;
+	height: 50px;
+}
+	.scoreTable__position {
+		width: 50px;
+		height: 50px;
+		display: inline-block;
+	}
+		.scoreTable__position__header {
+			width: inherit;
+			height: 25px;
+			display: block;
+			text-align: center;
+			margin-bottom: 3px;
+			border-bottom: thin dashed rgba(166,157,188,1);
+		}
+			.scoreTable__position__header__text {
+				font-weight: normal;
+				font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+				color: #B5ACCD;
+				font-size: 14px;
+				text-overflow: ellipsis;
+			}
+		.scoreTable__position__score {
+			width: inherit;
+			height: 25px;
+			display: table;
+			background-color: rgba(166,157,188,0.74);
+			text-align: center;
+		}
+			.scoreTable__position__score__text {
+				display: table-cell;
+				vertical-align: middle;
+				font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+				color: #33225F;
+				font-size: 14px;
+			}
+
+/**************************/
+.playingMat {
+	/* Size */
+	width: 800px;
+	height: 800px;
+	
+	/* Position and Display */
+	margin: auto;
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+	
+	/* Color */
+	background-color: rgba(160,153,176,0.63);
+	-webkit-box-shadow: 9px 10px 25px 0px rgba(0,0,0,0.23);
+	-moz-box-shadow: 9px 10px 25px 0px rgba(0,0,0,0.23);
+	box-shadow: 9px 10px 25px 0px rgba(0,0,0,0.23);
+}
+	.playingMat__cardSlot {
+		/* Size */
+		width: 80px;
+		height: auto;
+		
+		/* Position and Display */
+		position: absolute;
+	}
+		.playingMat__cardSlot__west {
+			left: 250px;
+			top: 350px;
+		}
+		.playingMat__cardSlot__north {
+			left: 360px;
+			top: 200px;
+		}
+		.playingMat__cardSlot__east {
+			right: 250px;
+			top: 350px;
+		}
+		.playingMat__cardSlot__south {
+			left: 360px;
+			bottom: 200px;
+		}
+	.playingMat__card {
+		/* Size */
+		width: 80px;
+		height: 110px;
+		
+		/* Styling */
+		border-radius: 5px;
+		border: thin white dashed;
+		
+		/* Position and Display */
+		position: absolute;
+		left: 360px;
+		top: 350px;
+	}
+	.playingMat__card:hover {cursor: pointer;}
+		.playingMat__card__rank {
+			/* Position and Display */
+			position: absolute;
+			left: 10px;
+			top: 0px;
+			
+			/* Font */
+			font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+			font-size: 20px;
+		}
+			.playingMat__card__rank__inactive {
+				/* Color */
+				color: rgba(146,134,172,1.00);
+			}
+			.playingMat__card__rank__active {
+				/* Color */
+				color: rgba(205,203,210,1.00);
+			}
+			.playingMat__card__rank__disabled {
+				/* Color */
+				color: rgba(153,153,154,1.00);
+			}
+		.playingMat__card__suit {
+			/* Size */
+			width: 20px;
+			height: auto;
+			
+			/* Position and Display */
+			position: absolute;
+			left: 10px;
+			top: 35px;
+		}
+		.playingMat__card__inactive {
+			/* Color */
+			background-color: rgba(64,51,96,1.00);
+		}
+		.playingMat__card__active {
+			/* Color */
+			background-color: rgba(46,36,72,1.00);
+		}
+		.playingMat__card__disabled {
+			/* Color */
+			background-color: rgba(93,93,94,1.00);
+		}
